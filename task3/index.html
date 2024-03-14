@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div>
+      Гра «Як стати мільйонером». Подумайте, як можна реалізувати подібний
+      сценарій з використанням масивів та об'єктів. Пам'ятайте, що для кожного
+      запитання потрібно прописати: запитання, 4 варіанти відповіді, правильну
+      відповідь (яку порівнюватимемо з тим, що ввів користувач), сума, яку
+      виграв користувач. Визначте щонайменше 5 9 питань. Запитання з варіантами
+      відповідей ви можете вигадати самостійно, а можете скористатися пошуком.
+    </div>
+  </body>
+  <script>
+    const quiz = [
+      {
+        id: 0,
+        question: 'What is the result of Boolean ("0")',
+        answers: {
+          a: 'a: NaN',
+          b: 'b: false',
+          c: 'c: true',
+          d: 'd: null',
+        },
+        shot: 'c',
+        usersAnswer: '',
+      },
+      {
+        id: 1,
+        question: 'What is the result of 12 && "12"',
+        answers: {
+          a: 'a: 12',
+          b: 'b: 1212',
+          c: 'c: true',
+          d: 'd: "12"',
+        },
+        shot: 'd',
+        usersAnswer: '',
+      },
+      {
+        id: 2,
+        question: 'What is the result of 0 || 1 && 2 || 3',
+        answers: {
+          a: 'a: 0',
+          b: 'b: 1',
+          c: 'c: 2',
+          d: 'd: 3',
+        },
+        shot: 'c',
+        usersAnswer: '',
+      },
+      {
+        id: 3,
+        question: 'What is the result of "6" * "3"',
+        answers: {
+          a: 'a: NaN',
+          b: 'b: "18"',
+          c: 'c: 18',
+          d: 'd: "63"',
+        },
+        shot: 'c',
+        usersAnswer: '',
+      },
+      {
+        id: 4,
+        question: 'What is the result of {} === {}',
+        answers: {
+          a: 'a: null',
+          b: 'b: false',
+          c: 'c: undefined',
+          d: 'd: true',
+        },
+        shot: 'b',
+        usersAnswer: '',
+      },
+      {
+        id: 5,
+        question: 'What is the result of: typeof null',
+        answers: {
+          a: 'a: object',
+          b: 'b: string',
+          c: 'c: number',
+          d: 'd: undefined',
+        },
+        shot: 'a',
+        usersAnswer: '',
+      },
+    ];
+
+    let sum = 0;
+
+    for (let i = 0; i < quiz.length; i++) {
+     
+
+      quiz[i].usersAnswer = prompt(
+        `${quiz[i].question} \r\n ${quiz[i].answers.a}\r\n ${quiz[i].answers.b}\r\n ${quiz[i].answers.c}\r\n ${quiz[i].answers.d}`,
+        ''
+      );
+      if (quiz[i].usersAnswer == quiz[i].shot) {
+        sum += 50;
+
+        let conf = confirm('Do you like to procede?');
+        if (conf) {
+          continue;
+        } else {
+          alert(`Quiz is over. Your result is ${sum}`);
+          break;
+        }
+      } else {
+        // sum += sum;
+        alert(`The answer is wrong. Quiz is over. Your result is ${sum}`);
+        break;
+      }
+    }
+  </script>
+</html>

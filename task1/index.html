@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Завдання 1 Створіть функцію, яка визначатиме, чи є введений користувачем
+      рядок паліндромом. Паліндром – число, буквосполучення, слово або текст,
+      яке читається однаково зліва направо та справа наліво. Наприклад, 707,
+      Пилип, око, мадам тощо.
+    </p>
+    <script>
+      function isPalindrome(str) {
+        const newStr = str.toString().replaceAll(/[\s !,.?]/g, '').toLowerCase();
+        return newStr === newStr.split('').reverse().join('');
+      }
+
+      console.log(isPalindrome('madam'));
+      console.log(isPalindrome('mister'));
+      console.log(isPalindrome('No lemon, no melon'));
+      console.log(isPalindrome(123321));
+     
+    </script>
+  </body>
+</html>

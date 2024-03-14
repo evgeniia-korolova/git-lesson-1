@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Anagram</title>
+	</head>
+	<body>
+		<div>
+			Напишіть функцію, яка порівнює два рядки та визначає, чи є вони
+			анаграмою (слова складаються з одних і тих самих букв). Рядки
+			отримуємо від користувача за допомогою 2-х методів prompt. Приклад:
+			<ul>
+				<li>перше слово – апельсин;</li>
+				<li>друге слово – липень;</li>
+			</ul>
+			Результат: слова «апельсин» та «липень» не є анаграмою.
+		</div>
+
+		<script>
+			function isAnagram() {
+				let first = prompt('Enter the first word', '');
+				let second = prompt('Enter the second word', '');
+
+				if (first.length !== second.length) return false;
+				else {
+					return (
+						second.toLowerCase().split('').sort().join() ===
+						first.toLowerCase().split('').sort().join()
+					);
+				}
+			}
+
+			console.log(isAnagram());
+		</script>
+	</body>
+</html>
